@@ -6,20 +6,20 @@ import (
 )
 
 func main() {
-	GuessingGame()
+	Guessing()
 }
 
-func ReadNumber() int {
-	fmt.Print("Rate eine Zahl: ")
+func Number() int {
 	var zahl int
+	fmt.Print("Rate eine Zahl zwischen 0-20: ")
 	fmt.Scan(&zahl)
 	return zahl
 }
 
-func GuessingGame() {
-	random := rand.Intn(101) - 50
+func Guessing() {
+	random := rand.Intn(21)
 	for n := 0; n < 3; n++ {
-		guess := ReadNumber()
+		guess := Number()
 		if Check(guess, random) {
 			fmt.Println("Richtig geraten)")
 			return
